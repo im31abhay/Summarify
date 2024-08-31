@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_web_libraries_in_flutter, public_member_api_docs
 import 'dart:js_util';
+import 'package:js/js_util.dart';
 
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
@@ -63,7 +64,7 @@ class PopUpScreenCubit extends Cubit<PopUpScreenState> {
     );
 
     final url = tabs.first.url.trim();
-    final proxyUrl = 'https://cors-anywhere.herokuapp.com/${Uri.encodeComponent(url)}';
+    final proxyUrl = 'https://cors-anywhere.herokuapp.com/corsdemo/${Uri.encodeComponent(url)}';
 
     final loader = WebBaseLoader([proxyUrl]);
     return loader.load();
